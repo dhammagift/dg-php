@@ -1,0 +1,2 @@
+# Reverse readers stay on the PHP site for their users, out of search (owner 2026-10-19)
+Header set X-Robots-Tag "noindex, nofollow"
