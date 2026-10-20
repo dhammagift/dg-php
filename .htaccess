@@ -1,4 +1,9 @@
 RewriteEngine On
+# The old Rationale and Principles texts live on in the docs (owner 2026-10-20): the same 301s as dhamma.gift, the files are gone
+RewriteRule ^assets/common/rationale\.html$ https://dhamma.gift/ru/docs/rationale [R=301,L]
+RewriteRule ^assets/common/rationale-en\.html$ https://dhamma.gift/docs/rationale [R=301,L]
+RewriteRule ^assets/common/o\.html$ https://dhamma.gift/ru/docs/principles [R=301,L]
+RewriteRule ^assets/common/o-en\.html$ https://dhamma.gift/docs/principles [R=301,L]
 #RewriteRule ^(.*)$ https://dhamma.gift/$1 [L,R=301]
 
 # /pwa_share → /?p=-kn&q=...
