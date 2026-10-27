@@ -155,3 +155,8 @@ RedirectMatch 404 ^/nodejs/
 # в ту же папку offline-data/lbl/ в обход проверки (кто угодно, без входа).
 RedirectMatch 410 ^/assets/lbl-save\.php$
 RedirectMatch 301 ^/assets/lbl(-en)?\.html$ https://dhamma.gift/assets/lbl$1.html
+
+# Pages under /assets (old tools, saved search results, help copies) leave search but keep working for people (owner 2026-10-27)
+<If "%{REQUEST_URI} =~ m#^/([a-z]{2}/)?assets/.*(\.html?|\.php|/)$#">
+    Header always set X-Robots-Tag "noindex"
+</If>

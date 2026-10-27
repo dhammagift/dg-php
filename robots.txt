@@ -38,8 +38,4 @@ Disallow: /w.php
 Disallow: /s.php
 Disallow: /suttacentral.net/
 Disallow: /assets/js/
-Disallow: /assets/html/
-Disallow: /assets/lunar/
-Disallow: /assets/br/
 Disallow: /assets/apk/
-Disallow: /assets/diff/
