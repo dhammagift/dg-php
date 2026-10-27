@@ -5,6 +5,15 @@ RewriteCond %{HTTP_USER_AGENT} (\bbot\b|googlebot|[a-z]bot/|crawl|spider|slurp|y
 RewriteRule ^assets/materials/.*\.(pdf|xlsx)$ - [G,L,NC]
 RewriteCond %{HTTP_USER_AGENT} (\bbot\b|googlebot|[a-z]bot/|crawl|spider|slurp|yandex|bingpreview|duckduck|facebookexternalhit) [NC]
 RewriteRule ^(dhammatalks\.org|dhamma\.ru|accesstoinsight\.org|buddhadust\.net|theravada\.ru|theravada\.rf|tipitaka\.theravada\.su|metta\.lk|en\.dhammadana\.org|legacy\.suttacentral\.net|lp)(/|$) - [G,L]
+# The old readers say where the text lives now (owner 2026-10-27: no banner, the old. subdomain says it): rel=canonical to
+# the same text on dhamma.gift, so search engines keep the new page. Lower-case ids only (the new site lower-cases the rest).
+RewriteCond %{QUERY_STRING} (^|&)q=([a-z]+[-a-z]*[0-9][0-9.-]*)(&|$)
+RewriteRule ^(read|ml|d|memorize)/(index\.html)?$ - [E=DG_CANON:https://dhamma.gift/%2]
+RewriteCond %{QUERY_STRING} (^|&)q=([a-z]+[-a-z]*[0-9][0-9.-]*)(&|$)
+RewriteRule ^r/(index\.html)?$ - [E=DG_CANON:https://dhamma.gift/%2?lang=ru]
+RewriteRule ^(index\.php)?$ - [E=DG_CANON:https://dhamma.gift/]
+RewriteRule ^ru/(index\.php)?$ - [E=DG_CANON:https://dhamma.gift/?lang=ru]
+Header always set Link "<%{DG_CANON}e>; rel=\"canonical\"" env=DG_CANON
 # The old Rationale and Principles texts live on in the docs (owner 2026-10-20): the same 301s as dhamma.gift, the files are gone
 RewriteRule ^assets/common/rationale\.html$ https://dhamma.gift/ru/docs/rationale [R=301,L]
 RewriteRule ^assets/common/rationale-en\.html$ https://dhamma.gift/docs/rationale [R=301,L]
