@@ -1,7 +1,7 @@
 RewriteEngine On
 # Other sites' mirrors are not for search engines (owner 2026-10-27: they should show the official sites): 410 Gone to bots,
 # people still open them; robots.txt does not disallow them, so the 410 can be read
-RewriteCond %{HTTP_USER_AGENT} (bot|crawl|spider|slurp|yandex|bingpreview|duckduck|facebookexternalhit) [NC]
+RewriteCond %{HTTP_USER_AGENT} (\bbot\b|googlebot|[a-z]bot/|crawl|spider|slurp|yandex|bingpreview|duckduck|facebookexternalhit) [NC]
 RewriteRule ^(dhammatalks\.org|dhamma\.ru|accesstoinsight\.org|buddhadust\.net|theravada\.ru|theravada\.rf|tipitaka\.theravada\.su|metta\.lk|en\.dhammadana\.org|legacy\.suttacentral\.net)(/|$) - [G,L]
 # The old Rationale and Principles texts live on in the docs (owner 2026-10-20): the same 301s as dhamma.gift, the files are gone
 RewriteRule ^assets/common/rationale\.html$ https://dhamma.gift/ru/docs/rationale [R=301,L]
