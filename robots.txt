@@ -41,6 +41,5 @@ Disallow: /assets/js/
 Disallow: /assets/html/
 Disallow: /assets/lunar/
 Disallow: /assets/br/
-Disallow: /assets/materials/
 Disallow: /assets/apk/
 Disallow: /assets/diff/
