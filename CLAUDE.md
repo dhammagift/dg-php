@@ -1,1 +1,1 @@
-/var/www/dg-node-prod/CLAUDE.global.md
+/root/.claude/CLAUDE.md
